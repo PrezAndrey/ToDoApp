@@ -12,12 +12,14 @@ class TaskManager {
     var tasksCount = 0
     let doneTasksCount = 0
     
+    private var taskArray: [Task] = []
+    
     func addTask(task: Task) {
-        
         tasksCount += 1
+        taskArray.append(task)
     }
     
-    func getTask(at: Int) -> Task {
-        return Task(title: "")
+    func getTask(at index: Int) -> Task {
+        return taskArray[index]
     }
 }

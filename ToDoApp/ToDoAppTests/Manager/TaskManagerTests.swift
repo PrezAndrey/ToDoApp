@@ -54,7 +54,7 @@ class TaskManagerTests: XCTestCase {
         
         let returnedTask = sut.getTask(at: 0)
         
-        XCTAssertEqual(returnedTask, task)
+        XCTAssertEqual(returnedTask.title, task.title)
     }
    
 
