@@ -20,7 +20,10 @@ class TaskListViewControllerTest: XCTestCase {
     }
     
     func testTableViewIsNotNilWhenViewIsLoaded() {
-        let sut = TaskListViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TaskListVC")
+        let sut = vc as! TaskListViewController
+        
         sut.loadViewIfNeeded()
         
         XCTAssertNotNil(sut.tableView)
