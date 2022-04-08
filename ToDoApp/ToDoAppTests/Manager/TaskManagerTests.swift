@@ -90,6 +90,29 @@ class TaskManagerTests: XCTestCase {
         XCTAssertEqual(returnedTask.title, task.title)
         
     }
+    
+    func testRemoveAllResultsCountsBeZero() {
+        let firstTask = Task(title: "Foo")
+        let secondTask = Task(title: "Bar")
+        
+        sut.addTask(task: firstTask)
+        sut.addTask(task: secondTask)
+        
+        sut.checkTask(at: 0)
+        
+        sut.removeAllTasks()
+        
+        XCTAssertEqual(sut.tasksCount, 0)
+        XCTAssertEqual(sut.doneTasksCount, 0)
+    }
+    
+    func testAddingSameObjectDoesNotIncrementCount() {
+        sut.addTask(task: Task(title: "Foo"))
+        sut.addTask(task: Task(title: "Foo"))
+        
+        XCTAssertEqual(sut.tasksCount, 1)
+        
+    }
    
 
 }

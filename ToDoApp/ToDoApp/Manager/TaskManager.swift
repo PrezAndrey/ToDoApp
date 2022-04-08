@@ -20,7 +20,10 @@ class TaskManager {
     private var doneTasks: [Task] = []
     
     func addTask(task: Task) {
-        tasks.append(task)
+        if !tasks.contains(task) {
+            tasks.append(task)
+        }
+        
     }
     
     func getTask(at index: Int) -> Task {
@@ -35,6 +38,13 @@ class TaskManager {
     func doneTask(at index: Int) -> Task {
         return doneTasks[index]
     }
+    
+    func removeAllTasks() {
+        tasks.removeAll()
+        doneTasks.removeAll()
+    }
+    
+    
     
     
 
