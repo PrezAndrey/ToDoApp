@@ -20,6 +20,8 @@
 		5598FA4E28001C3A00A281EB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA4D28001C3A00A281EB /* Location.swift */; };
 		5598FA502800224B00A281EB /* TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA4F2800224B00A281EB /* TaskTests.swift */; };
 		5598FA522800225E00A281EB /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA512800225E00A281EB /* LocationTests.swift */; };
+		5598FA5628002E7500A281EB /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA5528002E7500A281EB /* TaskManagerTests.swift */; };
+		5598FA5928002F3200A281EB /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA5828002F3200A281EB /* TaskManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		5598FA4D28001C3A00A281EB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5598FA4F2800224B00A281EB /* TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTests.swift; sourceTree = "<group>"; };
 		5598FA512800225E00A281EB /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		5598FA5528002E7500A281EB /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
+		5598FA5828002F3200A281EB /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		5598FA162800179F00A281EB /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5598FA5728002F1E00A281EB /* Manager */,
 				5598FA4928001BCC00A281EB /* View */,
 				5598FA4828001BC400A281EB /* Model */,
 				5598FA4728001BB800A281EB /* Controller */,
@@ -119,8 +124,9 @@
 		5598FA2D280017A100A281EB /* ToDoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				5598FA2E280017A100A281EB /* ToDoAppTests.swift */,
 				5598FA532800227F00A281EB /* Model */,
+				5598FA5428002E5500A281EB /* Manager */,
+				5598FA2E280017A100A281EB /* ToDoAppTests.swift */,
 			);
 			path = ToDoAppTests;
 			sourceTree = "<group>";
@@ -177,6 +183,22 @@
 				5598FA512800225E00A281EB /* LocationTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5598FA5428002E5500A281EB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5598FA5528002E7500A281EB /* TaskManagerTests.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5598FA5728002F1E00A281EB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5598FA5828002F3200A281EB /* TaskManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5598FA5928002F3200A281EB /* TaskManager.swift in Sources */,
 				5598FA4C28001C2C00A281EB /* Task.swift in Sources */,
 				5598FA1C2800179F00A281EB /* ViewController.swift in Sources */,
 				5598FA4E28001C3A00A281EB /* Location.swift in Sources */,
@@ -324,6 +347,7 @@
 			files = (
 				5598FA502800224B00A281EB /* TaskTests.swift in Sources */,
 				5598FA522800225E00A281EB /* LocationTests.swift in Sources */,
+				5598FA5628002E7500A281EB /* TaskManagerTests.swift in Sources */,
 				5598FA2F280017A100A281EB /* ToDoAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5LT7XRVG2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -522,6 +547,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5LT7XRVG2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
