@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		555383EA28056D64009E4841 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555383E928056D64009E4841 /* DataProvider.swift */; };
 		5598FA182800179F00A281EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA172800179F00A281EB /* AppDelegate.swift */; };
 		5598FA1A2800179F00A281EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA192800179F00A281EB /* SceneDelegate.swift */; };
 		5598FA1C2800179F00A281EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA1B2800179F00A281EB /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		555383E928056D64009E4841 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		5598FA142800179F00A281EB /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5598FA172800179F00A281EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5598FA192800179F00A281EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				5598FA1B2800179F00A281EB /* ViewController.swift */,
 				5598FA5D28005A7F00A281EB /* TaskListViewController.swift */,
+				555383E928056D64009E4841 /* DataProvider.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				5598FA5E28005A7F00A281EB /* TaskListViewController.swift in Sources */,
 				5598FA5928002F3200A281EB /* TaskManager.swift in Sources */,
+				555383EA28056D64009E4841 /* DataProvider.swift in Sources */,
 				5598FA4C28001C2C00A281EB /* Task.swift in Sources */,
 				5598FA1C2800179F00A281EB /* ViewController.swift in Sources */,
 				5598FA4E28001C3A00A281EB /* Location.swift in Sources */,
