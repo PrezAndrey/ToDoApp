@@ -31,6 +31,7 @@ extension DataProvider: UITableViewDataSource {
         
         guard let section = Section(rawValue: section) else { fatalError() }
         guard let taskManager = taskManager else { return 0 }
+        
         switch section {
         case .toDo:
             return taskManager.tasksCount
@@ -41,6 +42,10 @@ extension DataProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaskCell.self), for: indexPath) as! TaskCell
+        
+        if let task = taskManager?.getTask(at: indexPath.row) {
+            cell.configure(withTask: task)
+        }
         
         return cell
     }
