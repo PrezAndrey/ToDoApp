@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum Section: Int {
+enum Section: Int, CaseIterable {
     case toDo
     case done
 }
@@ -43,16 +43,29 @@ extension DataProvider: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaskCell.self), for: indexPath) as! TaskCell
         
-        if let task = taskManager?.getTask(at: indexPath.row) {
-            cell.configure(withTask: task)
+        
+        let task: Task
+        
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        guard let taskManager = taskManager else { fatalError() }
+        
+        switch section {
+        case .toDo:
+            task = taskManager.getTask(at: indexPath.row)
+        case .done:
+            task = taskManager.doneTask(at: indexPath.row)
         }
+        
+       
+        cell.configure(withTask: task)
+        
         
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
     
-        return 2
+        return Section.allCases.count
     }
     
     
