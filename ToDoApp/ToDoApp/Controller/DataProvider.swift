@@ -20,7 +20,17 @@ class DataProvider: NSObject {
 }
 
 extension DataProvider: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        
+        switch section {
+        case .toDo:
+            return "Done"
+        case .done:
+            return "Undone"
+        }
+    }
 }
 
 
