@@ -56,8 +56,7 @@ extension DataProvider: UITableViewDataSource {
         
         let task: Task
         
-        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
-        guard let taskManager = taskManager else { fatalError() }
+        guard let section = Section(rawValue: indexPath.section), let taskManager = taskManager else { fatalError() }
         
         switch section {
         case .toDo:
@@ -76,6 +75,21 @@ extension DataProvider: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
     
         return Section.allCases.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard let section = Section(rawValue: indexPath.section), let taskManager = taskManager else { fatalError() }
+        
+        switch section {
+        case .toDo:
+            taskManager.checkTask(at: indexPath.row)
+        case .done:
+            taskManager.uncheckTask(at: indexPath.row)
+        }
+    
+        tableView.reloadData()
     }
     
     
