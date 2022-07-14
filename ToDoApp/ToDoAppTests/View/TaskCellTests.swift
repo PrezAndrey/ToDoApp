@@ -61,6 +61,27 @@ class TaskCellTests: XCTestCase {
         
         XCTAssertTrue(cell.dateLable.isDescendant(of: cell.contentView))
     }
+    
+    func testConfigureSetsTitle() {
+        
+        let task = Task(title: "Foo")
+        cell.configure(withTask: task)
+        
+        XCTAssertEqual(cell.titleLable.text, task.title)
+    }
+    
+    func testConfigureSetsDate() {
+        
+        let task = Task(title: "Foo")
+        cell.configure(withTask: task)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yy"
+        let date = task.date
+        let dateString = dateFormatter.string(from: date!)
+        
+        XCTAssertEqual(cell.dateLable.text, dateString)
+    }
 }
 
 extension TaskCellTests {

@@ -13,7 +13,17 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var locationLable: UILabel!
     @IBOutlet weak var dateLable: UILabel!
     
-    func configure(withTask task: Task) {}
+    func configure(withTask task: Task) {
+        
+        self.titleLable.text = task.title
+        
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yy"
+        let dateString = df.string(from: task.date!)
+        
+        dateLable.text = dateString
+        
+    }
     
 
 }
