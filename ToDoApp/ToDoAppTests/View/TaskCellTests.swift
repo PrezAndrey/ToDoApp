@@ -22,7 +22,7 @@ class TaskCellTests: XCTestCase {
         let dataSource = FakeDataSource()
         tableView?.dataSource = dataSource
         
-        cell = tableView?.dequeueReusableCell(withIdentifier: String(describing: TaskCell.self), for: IndexPath(row: 0, section: 0)) as! TaskCell
+        cell = tableView?.dequeueReusableCell(withIdentifier: String(describing: TaskCell.self), for: IndexPath(row: 0, section: 0)) as? TaskCell
     }
 
     override func tearDownWithError() throws {
@@ -38,6 +38,28 @@ class TaskCellTests: XCTestCase {
     func testCellHasTitleLableInContentView() {
         
         XCTAssertTrue(cell.titleLable.isDescendant(of: cell.contentView))
+    }
+    
+    func testCellHasLocationLabel() {
+        
+        XCTAssertNotNil(cell.locationLable)
+    }
+    
+    
+    func testCellHasLocationLableInContentView() {
+        
+        XCTAssertTrue(cell.locationLable.isDescendant(of: cell.contentView))
+    }
+    
+    func testCellHasDateLabel() {
+        
+        XCTAssertNotNil(cell.dateLable)
+    }
+    
+    
+    func testCellHasDateLableInContentView() {
+        
+        XCTAssertTrue(cell.dateLable.isDescendant(of: cell.contentView))
     }
 }
 

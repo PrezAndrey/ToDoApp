@@ -10,6 +10,8 @@ import UIKit
 class TaskCell: UITableViewCell {
     
     @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var locationLable: UILabel!
+    @IBOutlet weak var dateLable: UILabel!
     
     func configure(withTask task: Task) {}
     
