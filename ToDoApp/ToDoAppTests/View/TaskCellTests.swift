@@ -51,6 +51,7 @@ class TaskCellTests: XCTestCase {
         XCTAssertTrue(cell.locationLable.isDescendant(of: cell.contentView))
     }
     
+    
     func testCellHasDateLabel() {
         
         XCTAssertNotNil(cell.dateLable)
@@ -81,6 +82,50 @@ class TaskCellTests: XCTestCase {
         let dateString = dateFormatter.string(from: date!)
         
         XCTAssertEqual(cell.dateLable.text, dateString)
+    }
+    
+    
+    func testConfigureSetsLocationName() {
+        
+        let location = Location(name: "Bar")
+        let task = Task(title: "Foo", location: location)
+        
+        cell.configure(withTask: task)
+        
+        XCTAssertEqual(cell.locationLable.text, task.location?.name)
+    }
+    
+    
+    func configureCellWithTaskDone() {
+        
+        let task = Task(title: "Foo")
+        cell.configure(withTask: task, done: true)
+    }
+    
+    
+    func testDoneTasksShouldStrikeThrough() {
+        
+        configureCellWithTaskDone()
+        
+        let atributedString = NSAttributedString(string: "Foo", attributes: [NSAttributedString.Key.strikethroughStyle : NSUnderlineStyle.single.rawValue])
+        
+        XCTAssertEqual(cell.titleLable.attributedText, atributedString)
+    }
+    
+    
+    func testDoneTaskDateLableIsNil() {
+        
+        configureCellWithTaskDone()
+        
+        XCTAssertNil(cell.dateLable)
+    }
+    
+    
+    func testDoneTaskLocationLableIsNil() {
+        
+        configureCellWithTaskDone()
+        
+        XCTAssertNil(cell.locationLable)
     }
 }
 
