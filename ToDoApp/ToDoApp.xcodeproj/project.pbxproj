@@ -28,6 +28,8 @@
 		5598FA5C28005A1F00A281EB /* TaskListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA5B28005A1F00A281EB /* TaskListViewControllerTest.swift */; };
 		5598FA5E28005A7F00A281EB /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598FA5D28005A7F00A281EB /* TaskListViewController.swift */; };
 		55ABD96E287E2E52002C2B67 /* TaskCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ABD96D287E2E52002C2B67 /* TaskCellTests.swift */; };
+		55ABD9702884C934002C2B67 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ABD96F2884C933002C2B67 /* DetailViewControllerTests.swift */; };
+		55ABD9722884CA14002C2B67 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ABD9712884CA14002C2B67 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		5598FA5B28005A1F00A281EB /* TaskListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTest.swift; sourceTree = "<group>"; };
 		5598FA5D28005A7F00A281EB /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		55ABD96D287E2E52002C2B67 /* TaskCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellTests.swift; sourceTree = "<group>"; };
+		55ABD96F2884C933002C2B67 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		55ABD9712884CA14002C2B67 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				5598FA1B2800179F00A281EB /* ViewController.swift */,
 				5598FA5D28005A7F00A281EB /* TaskListViewController.swift */,
 				555383E928056D64009E4841 /* DataProvider.swift */,
+				55ABD9712884CA14002C2B67 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			children = (
 				5598FA5B28005A1F00A281EB /* TaskListViewControllerTest.swift */,
 				555383EB2805783A009E4841 /* DataProviderTests.swift */,
+				55ABD96F2884C933002C2B67 /* DetailViewControllerTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				5598FA1C2800179F00A281EB /* ViewController.swift in Sources */,
 				5598FA4E28001C3A00A281EB /* Location.swift in Sources */,
 				5598FA182800179F00A281EB /* AppDelegate.swift in Sources */,
+				55ABD9722884CA14002C2B67 /* DetailViewController.swift in Sources */,
 				555383F02806C146009E4841 /* TaskCell.swift in Sources */,
 				5598FA1A2800179F00A281EB /* SceneDelegate.swift in Sources */,
 			);
@@ -389,6 +396,7 @@
 				5598FA5628002E7500A281EB /* TaskManagerTests.swift in Sources */,
 				5598FA2F280017A100A281EB /* ToDoAppTests.swift in Sources */,
 				5598FA5C28005A1F00A281EB /* TaskListViewControllerTest.swift in Sources */,
+				55ABD9702884C934002C2B67 /* DetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
