@@ -115,6 +115,13 @@
                                 <rect key="frame" x="87" y="502" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-IS-YrX">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x56-i2-Ywa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,6 +129,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="biQ-7N-neQ" id="V2j-5f-9v2"/>
                         <outlet property="descriptionLabel" destination="fhF-tK-3W6" id="jYb-Yb-mkn"/>
+                        <outlet property="locationLabel" destination="fNv-IS-YrX" id="gpI-CQ-CEQ"/>
                         <outlet property="mapView" destination="n4K-YM-AfF" id="JgF-QD-IFX"/>
                         <outlet property="titleLabel" destination="Elf-vN-heK" id="E7w-Wj-NiN"/>
                     </connections>
