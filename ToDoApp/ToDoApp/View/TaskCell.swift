@@ -24,18 +24,14 @@ class TaskCell: UITableViewCell {
     func configure(withTask task: Task, done: Bool = false) {
         
         if done {
-            
             let attributedString = NSAttributedString(string: task.title, attributes: [NSAttributedString.Key.strikethroughStyle : NSUnderlineStyle.single.rawValue])
             self.titleLable.attributedText = attributedString
             self.locationLable = nil
             self.dateLable = nil
             
         } else {
-            
-            if let date = task.date {
-                let dateString = dateFormatter.string(from: date)
-                self.dateLable.text = dateString
-            }
+            let dateString = dateFormatter.string(from: task.date)
+            self.dateLable.text = dateString
             self.titleLable.text = task.title
             self.locationLable.text = task.location?.name
         }
