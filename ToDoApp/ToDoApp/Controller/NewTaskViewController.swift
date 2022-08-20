@@ -11,7 +11,7 @@ import CoreLocation
 class NewTaskViewController: UIViewController {
 
     var taskManager: TaskManager!
-    var geocodder = CLGeocoder()
+    var geocoder = CLGeocoder()
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -27,6 +27,7 @@ class NewTaskViewController: UIViewController {
         df.dateFormat = "dd.MM.yy"
         return df
     }
+
     
     func save() {
         let titleString = titleTextField.text
@@ -34,9 +35,9 @@ class NewTaskViewController: UIViewController {
         let date = dateFormatter.date(from: dateTextField.text!)
         let descriptionString = descriptionTextField.text
         let addressString = addressTextField.text
-        geocodder.geocodeAddressString(addressString!) { [unowned self] (placemarks, error) in
-            let placemark = placemarks.first
-            let coordinates = placemark.location?.coordinate
+        geocoder.geocodeAddressString(addressString!) { [unowned self] (placemarks, error) in
+            let placemark = placemarks?.first
+            let coordinates = placemark?.location?.coordinate
             let location = Location(name: locationString!, coordinate: coordinates)
             let task = Task(title: titleString!, description: descriptionString!, location: location, date: date)
             self.taskManager.addTask(task: task)
@@ -44,11 +45,4 @@ class NewTaskViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
 }
