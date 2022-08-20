@@ -13,6 +13,7 @@ import CoreLocation
 class NewTaskViewControllerTests: XCTestCase {
 
     var sut: NewTaskViewController!
+    var placemark: MockCLPlacemark!
     
     override func setUpWithError() throws {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -80,17 +81,56 @@ class NewTaskViewControllerTests: XCTestCase {
         sut.descriptionTextField.text = "Baz"
 
         sut.taskManager = TaskManager()
+        let mockGeocoder = MockClGeocoder()
+        sut.geocoder = mockGeocoder
 
         sut.save()
-        let task = sut.taskManager.getTask(at: 0)
+        
         let coordinate = CLLocationCoordinate2D(latitude: 37.6192919, longitude: 55.7586642)
-        let location = Location(name: "Bar", coordinate: coordinate)
+        let location = Location(name: "Москва", coordinate: coordinate)
         let generatedTask = Task(title: "Foo", description: "Baz", location: location, date: date)
+        
+        placemark = MockCLPlacemark()
+        placemark.mockCoordinate = coordinate
+        mockGeocoder.completionHandler?([placemark], nil)
+        
+        let task = sut.taskManager.getTask(at: 0)
 
         XCTAssertEqual(task, generatedTask)
     }
-
-
-
     
+    
+    func testSaveButtonHasSaveMethod() {
+        
+        let saveButton = sut.saveButton
+        
+        guard let actions = saveButton?.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+            XCTFail()
+            return
+        }
+    }
+}
+
+
+
+extension NewTaskViewControllerTests {
+    
+    class MockClGeocoder: CLGeocoder {
+        
+        var completionHandler: CLGeocodeCompletionHandler?
+        
+        override func geocodeAddressString(_ addressString: String, completionHandler: @escaping CLGeocodeCompletionHandler) {
+            self.completionHandler = completionHandler
+        }
+    }
+    
+    
+    class MockCLPlacemark: CLPlacemark {
+        
+        var mockCoordinate: CLLocationCoordinate2D!
+        
+        override var location: CLLocation? {
+            return CLLocation(latitude: mockCoordinate.latitude, longitude: mockCoordinate.longitude)
+        }
+    }
 }
