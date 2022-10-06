@@ -58,12 +58,12 @@ class NewTaskViewControllerTests: XCTestCase {
     
     func testHasSaveButton() {
         
-        XCTAssertTrue(sut.saveButton)
+        XCTAssertTrue(sut.saveButton.isDescendant(of: sut.view))
     }
     
-    func testHasSaveButton() {
+    func testHasCancelButton() {
         
-        XCTAssertTrue(sut.cancelButton)
+        XCTAssertTrue(sut.cancelButton.isDescendant(of: sut.view))
     }
     
     
