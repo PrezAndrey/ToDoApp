@@ -54,9 +54,6 @@ class TaskManager {
         tasks.removeAll()
         doneTasks.removeAll()
     }
-    
-    
-    
-    
-
 }
+
+
