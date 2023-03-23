@@ -59,15 +59,8 @@ class NewTaskViewControllerTests: XCTestCase {
     }
     
     func testHasSaveButton() {
-<<<<<<< HEAD
+
         
-        XCTAssertTrue(sut.saveButton.isDescendant(of: sut.view))
-    }
-    
-    func testHasCancelButton() {
-        
-        XCTAssertTrue(sut.cancelButton.isDescendant(of: sut.view))
-=======
         XCTAssertTrue(sut.saveButton.isDescendant(of: sut.view))
     }
     
@@ -99,14 +92,13 @@ class NewTaskViewControllerTests: XCTestCase {
         let location = Location(name: "Москва", coordinate: coordinate)
         let generatedTask = Task(title: "Foo", description: "Baz", location: location, date: date)
         
-        placemark = MockCLPlacemark()
+        placemark = MockCLPlacemark(coder: <#NSCoder#>)
         placemark.mockCoordinate = coordinate
         mockGeocoder.completionHandler?([placemark], nil)
         
         let task = sut.taskManager.getTask(at: 0)
 
         XCTAssertEqual(task, generatedTask)
->>>>>>> 4250c8b66e83003e5833fd1eb8ee9555a859460b
     }
     
     

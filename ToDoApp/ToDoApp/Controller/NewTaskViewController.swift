@@ -43,8 +43,4 @@ class NewTaskViewController: UIViewController {
         df.dateFormat = "dd.MM.yy"
         return df
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> 4250c8b66e83003e5833fd1eb8ee9555a859460b
 }
